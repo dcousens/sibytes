@@ -1,5 +1,5 @@
 #include <string>
 
 inline std::string sibytes (const unsigned long number) {
-	return "0 B";
+	return std::to_string(number) + " B";
 }
