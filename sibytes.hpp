@@ -14,11 +14,11 @@ const auto UNITS = std::array{
 const auto EXP = std::array{
 	1UL,
 	1000UL,
-	1000000UL,
-	1000000000UL,
-	1000000000000UL,
-	1000000000000000UL,
-	1000000000000000000UL,
+	1000'000UL,
+	1000'000'000UL,
+	1000'000'000'000UL,
+	1000'000'000'000'000UL,
+	1000'000'000'000'000'000UL,
 };
 
 const auto FORMATS = std::array{
@@ -33,12 +33,12 @@ const auto FORMATS = std::array{
 
 inline std::string sibytes (const unsigned long number) {
 	size_t unit;
-	if (number < 1e3) unit = 0;
-	else if (number < 1e6) unit = 1;
-	else if (number < 1e9) unit = 2;
-	else if (number < 1e12) unit = 3;
-	else if (number < 1e15) unit = 4;
-	else if (number < 1e18) unit = 5;
+	if (number < EXP[1]) unit = 0;
+	else if (number < EXP[2]) unit = 1;
+	else if (number < EXP[3]) unit = 2;
+	else if (number < EXP[4]) unit = 3;
+	else if (number < EXP[5]) unit = 4;
+	else if (number < EXP[6]) unit = 5;
 	else unit = 6;
 
 	const auto left = number / EXP.at(unit);
