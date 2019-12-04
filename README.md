@@ -48,7 +48,7 @@ Maximum input is a 64 bit integer, or `18446744073709551615`.
 > echo '1000 foobar' | sibytes
 1 kB
 
-> echo '18446744073709551615' | sibytes
+> echo '18446744073709551616' | sibytes
 terminate called after throwing an instance of 'std::out_of_range'
   what():  stol
 
