@@ -3,6 +3,8 @@ A streaming, line-delimited, integer to SI unit bytes tool.
 
 The output is not rounded,  precision is maintained.
 
+Maximum input is a 64 bit integer, or `18446744073709551615`.
+
 
 ## Examples
 ```
@@ -38,13 +40,17 @@ The output is not rounded,  precision is maintained.
 > echo '1000000000000' | sibytes
 1 TB
 
-> echo '111\n2222\n4444224444' | sibytes
+> echo -e '111\n2222\n4444224444' | sibytes
 111 B
 2.222 kB
 4.444224444 GB
 
 > echo '1000 foobar' | sibytes
 1 kB
+
+> echo '18446744073709551615' | sibytes
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  stol
 
 > echo 'foobar' | sibytes
 terminate called after throwing an instance of 'std::invalid_argument'
