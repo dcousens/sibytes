@@ -7,7 +7,7 @@ Maximum input is a 64 bit integer, or `18446744073709551615`.
 
 
 ## Examples
-```
+``` bash
 > echo '1' | sibytes
 1 B
 
